@@ -1,0 +1,11 @@
+data/
+outputs/
+notebooks/
+.git/
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.env
+.ipynb_checkpoints/

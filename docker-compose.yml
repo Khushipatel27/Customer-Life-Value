@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  # -----------------------------------------------------------------------
+  # Main dashboard — runs the Streamlit app
+  # Usage: docker compose up clv-dashboard
+  # -----------------------------------------------------------------------
+  clv-dashboard:
+    build: .
+    container_name: clv_dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data          # raw Excel file (gitignored, mount from host)
+      - ./outputs:/app/outputs    # trained models, plots, parquet files
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # -----------------------------------------------------------------------
+  # One-shot trainer — runs python src/train.py then exits
+  # Usage: docker compose --profile train up clv-trainer
+  # -----------------------------------------------------------------------
+  clv-trainer:
+    build: .
+    container_name: clv_trainer
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    command: ["python", "src/train.py"]
+    profiles:
+      - train

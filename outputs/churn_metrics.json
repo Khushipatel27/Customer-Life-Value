@@ -1,0 +1,7 @@
+{
+  "AUC_ROC": 0.7196417375727721,
+  "Accuracy": 0.6872246696035242,
+  "Precision_returned": 0.6260162601626016,
+  "Recall_returned": 0.56,
+  "F1_returned": 0.5911708253358925
+}

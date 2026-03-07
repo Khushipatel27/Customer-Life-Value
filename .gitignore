@@ -1,0 +1,14 @@
+# Raw data (too large for git)
+data/online_retail_II.xlsx
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Environment
+.env
+*.egg-info/
+dist/
+build/
