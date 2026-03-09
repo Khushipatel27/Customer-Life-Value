@@ -1,6 +1,10 @@
 # Raw data (too large for git)
 data/online_retail_II.xlsx
 
+# Local explanation file
+PROJECT_EXPLANATION.txt
+CLAUDE.md
+prompt.md
 # Python cache
 __pycache__/
 *.pyc
