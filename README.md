@@ -73,11 +73,11 @@ SHAP `TreeExplainer` is used to generate:
 
 | Metric | Value |
 |--------|-------|
-| MAE (£) | *run `python src/train.py` to populate* |
-| RMSE (£) | |
-| R² | |
-| MAPE (%) | |
-| Pearson r | |
+| MAE (£) | 568.10 |
+| RMSE (£) | 4029.53 |
+| R² | 0.124 |
+| MAPE (%) | 93.07 |
+| Pearson r | 0.386 |
 
 ---
 
