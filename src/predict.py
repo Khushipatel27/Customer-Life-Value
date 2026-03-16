@@ -254,7 +254,7 @@ def assign_rfm_segment(features: pd.DataFrame) -> pd.Series:
     -------
     Series of segment label strings indexed like features.
     """
-    r_score = pd.qcut(features["recency"], q=4, labels=[4, 3, 2, 1]).astype(int)
+    r_score = pd.qcut(features["recency"].rank(method="first"), q=4, labels=[4, 3, 2, 1]).astype(int)
     f_score = pd.qcut(
         features["frequency"].rank(method="first"), q=4, labels=[1, 2, 3, 4]
     ).astype(int)
