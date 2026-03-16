@@ -2,7 +2,7 @@ name: Keep Streamlit Alive
 
 on:
   schedule:
-    - cron: "0 12 */5 * *" # every 5 days at noon UTC
+    - cron: '0 12 */5 * *'  # every 5 days at noon UTC
   workflow_dispatch:
 
 jobs:
@@ -15,3 +15,10 @@ jobs:
           "https://customer-life-value.streamlit.app/" \
           -H "User-Agent: Mozilla/5.0"
           echo "CLV app pinged successfully"
+
+      - name: Wake Electricity Forecasting App
+        run: |
+          curl -L --max-time 60 \
+          "https://electricity-demand-forecasting-with-lstm-xgboost-sarima.streamlit.app/" \
+          -H "User-Agent: Mozilla/5.0"
+          echo "Electricity app pinged successfully"
