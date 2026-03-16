@@ -1,0 +1,17 @@
+name: Keep Streamlit Alive
+
+on:
+  schedule:
+    - cron: "0 12 */5 * *" # every 5 days at noon UTC
+  workflow_dispatch:
+
+jobs:
+  wake_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake CLV App
+        run: |
+          curl -L --max-time 60 \
+          "https://customer-life-value.streamlit.app/" \
+          -H "User-Agent: Mozilla/5.0"
+          echo "CLV app pinged successfully"
