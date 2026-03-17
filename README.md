@@ -1,3 +1,4 @@
+<div align="center">
 # Customer Lifetime Value Prediction
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
@@ -10,6 +11,7 @@
 
 This project predicts the 12-month revenue potential (Customer Lifetime Value) of individual retail customers using the UCI Online Retail II dataset. An XGBoost regression model is trained on 10 RFM-based behavioural features and served through an interactive Streamlit dashboard with SHAP explainability.
 
+</div>
 ---
 
 ## Business Problem & Why CLV Matters
